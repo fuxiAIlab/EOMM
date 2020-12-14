@@ -55,8 +55,12 @@ Goal: maximize overall player engagement
 **EOMM:**
 
 - first measures players disengagement by their churn risk after each matchmaking decision;
+
 - secondly models all players who wait in the matchmaking pool as a complete graph, where each player is a node and the edge between two players is their sum churn risks if paired;
+
 - achieven matchmaking desicion by solving a *minimum weight perfect matching* problem that finds non-overlapping pairs with the minimal sum of edge weights on a complete graph.
+
+  ![eomm](./assets/pics/eomm.png)
 
 Limits: it applies to 1-vs-1 matches only.
 
