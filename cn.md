@@ -1,20 +1,22 @@
-# About this repo
-**This is a toy reproduction of the paper**  [*(WWW'17) EOMM: An Engagement Optimized Matchmaking*](http://web.cs.ucla.edu/~yzsun/papers/WWW17Chen_EOMM).
+# 关于本项目
+本项目是对论文[*(WWW'17) EOMM: An Engagement Optimized Matchmaking*](http://web.cs.ucla.edu/~yzsun/papers/WWW17Chen_EOMM)的复现。
 
 We are research engineers working on game matchmaking optimization domain. The idea of EOMM paper is interesting, so we reproduced the framework and the matchmaking procedure, according to the description in the paper.
 
-# 1. RUN THE CODE
 
-### - First tryout
+# 1. 运行代码
+
+### - 快速运行匹配仿真
 
 ```shell
 $ cd EOMM
 $ pip install -r requirements.txt  # use pip3 if you have both python2 and python3 in your environment
 $ python main.py  # log file will be generated into ./log folder
 ```
-You can see the simulation result both from your console and log file in `./log` folder.
 
-### - Code files
+仿真过程可以从控制台看到，也可以从./log文件夹下找到日志文件。
+
+### - 代码结构
 
 ```shell
 EOMM
@@ -24,7 +26,7 @@ EOMM
 ├── log                       # folder to keep log files
 ```
 
-### - Customize your matchmaking simulation
+### - 修改仿真参数
 
 In the file `main.py`, you can edit the variables 
 
@@ -46,7 +48,7 @@ matchmakers = [RandomMM(), SkillMM(), WorstMM(), EOMM()]
 
 **Now you can play around with the codes.**
 
-# 2. Summary of EOMM algorithm
+# 2. 论文算法简述
 
 Argument: the intuitive assumption that a fair game is best player experience sometimes fails, and matchmaking based on fairness is not optimal for engagement. 
 
@@ -60,8 +62,17 @@ Goal: maximize overall player engagement
 
 Limits: it applies to 1-vs-1 matches only.
 
+从匹配系统的角度来说，公平的比赛不一定是用户体验/用户参与度最高的。本文针对最大化用户参与度的目标进行匹配过程的建模。EOMM的匹配过程为：
 
-# 3. Graph Matching implementation
+- 以某次匹配之后用户的流失率作为用户参与度的度量
+- 基于等待队列中的所有玩家构建一张Graph，每个玩家作为一个节点，节点间的权重为当这两个玩家被匹配到同一场次时的二人流失率的总和
+- 通过在该Graph上求解最小权完美匹配得到玩家间的两两匹配结果
+
+该算法仅适用1-vs-1玩法的匹配。
+
+
+
+# 3. 关于图匹配算法实现
 
 The graph matching problem is sovled by ***networkx*** (see  [max_weight_matching](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.matching.max_weight_matching.html?highlight=max_weight#networkx.algorithms.matching.max_weight_matching) for more details).
 
