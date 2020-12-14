@@ -4,16 +4,16 @@
  * @Author: Linxia GONG 巩琳霞 (linxiagong@gmail.com)
  * @Date: 2020-11-25 11:58:17
  * @LastEditors: Linxia GONG 巩琳霞
- * @LastEditTime: 2020-12-14 17:23:34
+ * @LastEditTime: 2020-12-14 17:28:09
 -->
-# 【WWW'17】EOMM: An Engagement Optimized Matchmaking
+# About this repo
 **This is a toy reproduction of the paper**  [*(WWW'17) EOMM: An Engagement Optimized Matchmaking*](http://web.cs.ucla.edu/~yzsun/papers/WWW17Chen_EOMM).
 
 We are research engineers working on game matchmaking optimization domain. The idea of EOMM paper is interesting, so we reproduced the framework and the matchmaking procedure, according to the description in the paper.
 
 本项目是对EOMM论文的复现。
 
-## 1. RUN THE CODE / 运行代码
+# 1. RUN THE CODE / 运行代码
 
 ### - First tryout / 快速运行匹配仿真
 
@@ -47,7 +47,8 @@ In the file `main.py`, you can edit the variables
 An example: 
 
 ```python
-round_num=10000, player_num=100, matchmakers = [RandomMM(), SkillMM(), WorstMM(), EOMM()]
+round_num=10000, player_num=100
+matchmakers = [RandomMM(), SkillMM(), WorstMM(), EOMM()]
 ```
 
 1. At each round, we create a pool of 100 players;
@@ -57,7 +58,7 @@ round_num=10000, player_num=100, matchmakers = [RandomMM(), SkillMM(), WorstMM()
 
 **Now you can play around with the codes.**
 
-## 2. Summary of EOMM algorithm / 论文算法简述
+# 2. Summary of EOMM algorithm / 论文算法简述
 
 Argument: the intuitive assumption that a fair game is best player experience sometimes fails, and matchmaking based on fairness is not optimal for engagement. 
 
@@ -81,7 +82,7 @@ Limits: it applies to 1-vs-1 matches only.
 
 
 
-## 3. Graph Matching implementation / 关于图匹配算法实现
+# 3. Graph Matching implementation / 关于图匹配算法实现
 
 The graph matching problem is sovled by ***networkx*** (see  [max_weight_matching](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.matching.max_weight_matching.html?highlight=max_weight#networkx.algorithms.matching.max_weight_matching) for more details).
 
