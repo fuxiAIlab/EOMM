@@ -1,11 +1,3 @@
-<!--
- * @
- * 
- * @Author: Linxia GONG 巩琳霞 (linxiagong@gmail.com)
- * @Date: 2020-11-25 11:58:17
- * @LastEditors: Linxia GONG 巩琳霞
- * @LastEditTime: 2020-12-14 17:28:09
--->
 # About this repo
 **This is a toy reproduction of the paper**  [*(WWW'17) EOMM: An Engagement Optimized Matchmaking*](http://web.cs.ucla.edu/~yzsun/papers/WWW17Chen_EOMM).
 
