@@ -1,0 +1,12 @@
+theme: jekyll-theme-minimal
+
+# title of the website (displayed in the header)
+title: EOMM
+# logo picture
+logo:
+description: "This is a toy reproduction of the paper  <strong><em>(WWW'17) EOMM: An Engagement Optimized Matchmaking</em></strong>."
+
+show_downloads:
+  paper_link: true
+  data_link: 
+  show_github_link: true
